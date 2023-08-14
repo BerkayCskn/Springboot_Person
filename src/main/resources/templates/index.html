@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Home Page</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,7 +18,7 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/}">Home Page</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/personList}">Account List</a>
+                    <a class="nav-link" th:href="@{/personList}">Person List</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/addnew}">Add Account</a>
@@ -26,6 +27,11 @@
         </div>
     </div>
 </nav>
+
+<div class="container my-5 text-center">
+    <h1>Welcome to the Home Page</h1>
+    <p>This is the main page of the application. You can navigate to other sections using the navigation bar above.</p>
+</div>
 
 </body>
 </html>
