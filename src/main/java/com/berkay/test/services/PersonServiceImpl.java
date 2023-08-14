@@ -3,6 +3,7 @@ package com.berkay.test.services;
 import com.berkay.test.entities.Person;
 import com.berkay.test.repositories.IPersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,19 @@ public class PersonServiceImpl implements IPersonService{
     @Override
     public List<Person> getAllPerson() {
         return personRepository.findAll();
+    }
+
+    @Override
+    public Person getPersonById(Long id) {
+        return personRepository.findById(id).orElse(null);
+    }
+
+    public void deleteById(Long id) {
+        try {
+            personRepository.deleteById(id);
+        }catch(EmptyResultDataAccessException e) { //user zaten yok, db'den empty result gelmiş
+            System.out.println("User "+id+" doesn't exist"); //istersek loglayabiliriz
+        }
     }
 
 

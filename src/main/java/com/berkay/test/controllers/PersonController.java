@@ -34,5 +34,17 @@ public class PersonController {
         personServiceImpl.save(person);
         return "redirect:/personList";
     }
+    @GetMapping("/updatePerson/{id}")
+    public String editPerson(@PathVariable Long id, Model model) {
+        Person person = personServiceImpl.getPersonById(id);
+        model.addAttribute("person", person);
+        return "updatePerson";
+    }
+    @GetMapping("/deletePerson/{id}")
+    public String deletePerson(@PathVariable Long id) {
+        personServiceImpl.deleteById(id);
+        return "redirect:/personList";
+    }
+
 
 }
